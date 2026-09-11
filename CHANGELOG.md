@@ -1,5 +1,13 @@
 # Showcase changes
 
+## Chunk 02 · 2026-09-12
+
+- Demonstrated the difference between a task deadline and its next permitted reminder in local build 0.7.0.
+- Added an actual synthetic schedule screenshot with a Friday 17:00 deadline and Monday 10:00 contact time.
+- Explained explicit calendar adoption, quiet hours, cancellation after changes and checks before simulated dispatch.
+- Recorded 448 passing automated tests, sandboxed desktop/mobile checks, a fresh runtime-only installation and Windows launcher checks.
+- Preserved the source/publication boundary and the historical AI validation limits.
+
 ## Chunk 01 · 2026-09-08
 
 - Introduced the public procurement product showcase, based on local product build 0.6.0.

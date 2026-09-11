@@ -2,6 +2,29 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
+## Chunk 02 · Keep the deadline visible; time the reminder appropriately
+
+An approval task is due at 17:00 on Friday. The recipient's contact window has already closed. The deadline should stay visible while the reminder waits for an allowed time.
+
+The new local build separates those two decisions:
+
+| Sample rule | Result |
+| --- | --- |
+| Ready Friday 11 September 2026 at 16:00; 60 working minutes to complete | Task due Friday at **17:00** |
+| Monday–Friday, 09:00–17:00; quiet hours 16:30–10:00 | Next eligible reminder Monday 14 September at **10:00** |
+
+All example times use Asia/Dubai. The calendar and policy are fictional and configurable. Quiet hours affect contact eligibility; they do not extend the task deadline.
+
+![Actual task schedule preview showing a Friday 17:00 deadline and a Monday 10:00 next eligible reminder under a synthetic business calendar and quiet-hours policy.](assets/chunk-02-task-deadline-and-reminder.png)
+
+*Actual screen from local build 0.7.0, captured with disposable synthetic data. Reminder actions record local simulation receipts; no message is sent.*
+
+Before a simulated reminder goes ahead, the product rechecks the task, dependencies, configuration versions, recipient and contact window. Calendar or policy edits make affected schedules stale and cancel pending reservations. Completed or obsolete work also cancels its pending reminders. Duplicate reservations reuse the existing attempt, and successful-touch limits persist across schedule and recipient changes.
+
+Existing tasks keep their recorded deadlines until the owner explicitly applies a calendar policy. The preview shows what would change before it is applied. Saved deadlines, proposed deadlines and the next eligible contact time remain distinct.
+
+This helps a reviewer inspect the timing and reason for a follow-up. Reduced workload or faster procurement remains a value hypothesis to test with users.
+
 ## Chunk 01 · Traceable demand, explainable SLA measurement and a bounded AI assistant
 
 The first question is simple: can a reviewer follow a business need through its plan, requisition, changes and next responsible action—and understand the numbers shown along the way?
@@ -40,9 +63,11 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-The 0.6.0 release passed **301 automated tests**, with no failures or skips. The suite blocks external network access. Desktop/mobile browser exercises, Windows launcher checks and an isolated installed-package check also passed.
+The current 0.7.0 release passed **448 automated tests**, with zero failures, errors or skips. Sandboxed desktop/mobile browser checks exercised both existing workflows and the new schedule controls, including early-dispatch rejection and duplicate prevention. A fresh runtime-only installation and nine Windows launcher checks also passed. These checks used disposable synthetic state and made no live AI calls.
 
-The current screenshots were captured from the running 0.6.0 product with disposable synthetic state. Additional browser checks verify the AI preview at desktop and mobile widths, its required disclosure checkbox and rejection of a request without that disclosure. Provider transport and credential reading were blocked during screenshot capture.
+The preceding 0.6.0 release passed 301 tests; that count is historical.
+
+The Chunk 01 screenshots were captured from the running 0.6.0 product with disposable synthetic state. Additional browser checks verified the AI preview at desktop and mobile widths, its required disclosure checkbox and rejection of a request without that disclosure. Provider transport and credential reading were blocked during screenshot capture. They remain historical evidence for that release.
 
 These are development checks on synthetic scenarios; they are not a security certification or evidence of enterprise readiness.
 
