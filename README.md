@@ -2,28 +2,28 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
-## Chunk 02 · Keep the deadline visible; time the reminder appropriately
+## Chunk 02 · Remind while there is time to act
 
-An approval task is due at 17:00 on Friday. The recipient's contact window has already closed. The deadline should stay visible while the reminder waits for an allowed time.
+A useful first reminder helps prevent a missed deadline. Version 0.7.1 corrects the earlier overdue-only example and clearly separates preventive reminders from overdue follow-ups.
 
-The new local build separates those two decisions:
-
-| Sample rule | Result |
+| Sample task event | Asia/Dubai time |
 | --- | --- |
-| Ready Friday 11 September 2026 at 16:00; 60 working minutes to complete | Task due Friday at **17:00** |
-| Monday–Friday, 09:00–17:00; quiet hours 16:30–10:00 | Next eligible reminder Monday 14 September at **10:00** |
+| Task ready | Friday 11 September 2026, 15:00 |
+| First preventive reminder | **Friday, 16:00** |
+| Task deadline | **Friday, 17:00** |
+| Separate overdue follow-up, only if incomplete | Monday 14 September, 10:00 |
 
-All example times use Asia/Dubai. The calendar and policy are fictional and configurable. Quiet hours affect contact eligibility; they do not extend the task deadline.
+Fictional rules: Monday–Friday 09:00–17:00, quiet hours 16:30–10:00, two working hours to complete, one working hour of preventive notice, and an optional overdue follow-up one working hour after due. The first reminder is Friday; Monday is a separate overdue follow-up.
 
-![Actual task schedule preview showing a Friday 17:00 deadline and a Monday 10:00 next eligible reminder under a synthetic business calendar and quiet-hours policy.](assets/chunk-02-task-deadline-and-reminder.png)
+![Actual synthetic schedule preview showing a Friday 16:00 preventive reminder before a Friday 17:00 deadline, followed by a separate optional overdue follow-up.](assets/chunk-02-task-deadline-and-reminder.png)
 
-*Actual screen from local build 0.7.0, captured with disposable synthetic data. Reminder actions record local simulation receipts; no message is sent.*
+*Actual screen from local build 0.7.1, captured with disposable synthetic data. Actions create local simulation receipts; no message is sent.*
 
-Before a simulated reminder goes ahead, the product rechecks the task, dependencies, configuration versions, recipient and contact window. Calendar or policy edits make affected schedules stale and cancel pending reservations. Completed or obsolete work also cancels its pending reminders. Duplicate reservations reuse the existing attempt, and successful-touch limits persist across schedule and recipient changes.
+The product looks for an allowed contact before due, moving a planned contact earlier when quiet hours require it. If the target time passed but useful notice is still possible, it labels the reminder delayed. If no safe contact remains before due, it flags the missed preventive window. A preventive reminder cannot execute at or after the deadline or quietly become an overdue reminder.
 
-Existing tasks keep their recorded deadlines until the owner explicitly applies a calendar policy. The preview shows what would change before it is applied. Saved deadlines, proposed deadlines and the next eligible contact time remain distinct.
+Task completion, changed recipients and stale rules cancel pending attempts. Both reminder phases retain duplicate protection, cooldown and stable lifetime limits. Old policies require explicit review and reapplication; task deadlines and historical receipts remain preserved.
 
-This helps a reviewer inspect the timing and reason for a follow-up. Reduced workload or faster procurement remains a value hypothesis to test with users.
+Reduced chasing and fewer missed deadlines remain user-value hypotheses to measure. The demonstration establishes the implemented rule and its local checks, not customer outcomes.
 
 ## Chunk 01 · Traceable demand, explainable SLA measurement and a bounded AI assistant
 
@@ -63,7 +63,9 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-The current 0.7.0 release passed **448 automated tests**, with zero failures, errors or skips. Sandboxed desktop/mobile browser checks exercised both existing workflows and the new schedule controls, including early-dispatch rejection and duplicate prevention. A fresh runtime-only installation and nine Windows launcher checks also passed. These checks used disposable synthetic state and made no live AI calls.
+**The corrected 0.7.1 release passed 517 automated tests**, with no failures, errors or skips. Real sandboxed desktop/mobile browser checks demonstrated preventive contact before due and a separately identified overdue follow-up. A fresh runtime-only installation and nine Windows launcher checks passed. No live AI call or real message was sent.
+
+The historical 0.7.0 release passed **448 automated tests**, with zero failures, errors or skips. Sandboxed desktop/mobile browser checks exercised both existing workflows and the new schedule controls, including early-dispatch rejection and duplicate prevention. A fresh runtime-only installation and nine Windows launcher checks also passed. Those 0.7.0 checks used disposable synthetic state and made no live AI calls; they are historical and do not verify this correction.
 
 The preceding 0.6.0 release passed 301 tests; that count is historical.
 

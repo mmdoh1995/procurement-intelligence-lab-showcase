@@ -1,5 +1,13 @@
 # Showcase changes
 
+## Chunk 02 correction · 2026-09-12
+
+- Corrected the first-reminder example: Friday 16:00 preventive reminder, Friday 17:00 deadline, then an optional separately labelled overdue follow-up.
+- Added visible delayed/missed preventive states and preserved history during explicit policy upgrade.
+- Replaced the previous 0.7.0 image with an actual 0.7.1 screenshot.
+- Verified 517 tests, sandboxed desktop/mobile browser, fresh runtime installation and Windows launcher.
+
+
 ## Chunk 02 · 2026-09-12
 
 - Demonstrated the difference between a task deadline and its next permitted reminder in local build 0.7.0.
