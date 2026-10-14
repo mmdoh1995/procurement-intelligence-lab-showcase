@@ -1,5 +1,13 @@
 # Showcase changes
 
+## Chunk 03 - 2026-10-14
+
+- Added named local accounts, entity-scoped roles and current approval-authority checks in build 0.8.0.
+- Demonstrated original-creator self-approval prevention, restricted documents and fresh review after authority changes.
+- Added an actual synthetic screenshot; no source code or post drafts are included.
+- Verified 639 automated tests, three sandboxed browser flows, a fresh runtime installation and nine Windows launcher checks.
+- Retained the local single-process scope and unchanged live-AI limitations.
+
 ## Chunk 02 correction · 2026-09-12
 
 - Corrected the first-reminder example: Friday 16:00 preventive reminder, Friday 17:00 deadline, then an optional separately labelled overdue follow-up.

@@ -2,6 +2,25 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
+## Chunk 03 - Who is allowed to approve this request?
+
+An approval needs an identifiable person, the right entity and current permission for the exact request. Version 0.8.0 adds named local accounts with requester, buyer, approver and viewer roles.
+
+| Practical check | Demonstrated behavior |
+| --- | --- |
+| Can the requester approve their own request? | The original creator cannot approve it, even if they also hold the approver role. |
+| Can another entity see the request? | Record views, history, exports and document downloads check the selected entity and current permissions. |
+| What if the approver's permissions change? | The earlier decision remains in history but loses current authority. Restoring permissions does not revive it; a buyer must reopen review for a fresh decision. |
+| Does record access grant every document? | Documents require parent-record visibility and an explicitly allowed role. |
+
+![Actual synthetic work queue showing Fictional North Entity, the current Approver role, a request created by requester, and its simulated approval by a different named user.](assets/chunk-03-current-approval-authority.png)
+
+*Actual screenshot of local build 0.8.0, captured 14 October 2026 using disposable fictional identities and records. Approvals are simulations. The sample amount is not a delegation threshold.*
+
+The scope is deliberately precise: the approver must differ from the original creator. A person holding both buyer and approver roles may edit, route and approve another creator's request. Separate editor/router approval duties and monetary delegation rules are future work.
+
+Clearer responsibility and less unauthorized rework are value hypotheses to measure; this demonstration does not claim customer outcomes.
+
 ## Chunk 02 · Remind while there is time to act
 
 A useful first reminder helps prevent a missed deadline. Version 0.7.1 corrects the earlier overdue-only example and clearly separates preventive reminders from overdue follow-ups.
@@ -47,7 +66,7 @@ The worked example runs from Friday at 16:00 to Monday at 11:00. Under the displ
 
 ## Current limits
 
-This is a local, single-owner development product. Approvals and reminders are simulations. It does not place orders, reserve budget, contact suppliers, connect to an ERP or establish multi-user approval authority. Plan values, requisition values and allocations describe different views of demand and must not be added together as spend.
+This is a local development product supporting named accounts and entity-scoped permissions in one application process, alongside a preserved legacy owner exercise. Approvals and reminders are simulations. It does not place orders, reserve budget, contact suppliers, connect to an ERP or establish enterprise identity and monetary delegation. Plan values, requisition values and allocations describe different views of demand and must not be added together as spend.
 
 ## AI-01 · Explain a synthetic SLA snapshot
 
@@ -63,7 +82,9 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-**The corrected 0.7.1 release passed 517 automated tests**, with no failures, errors or skips. Real sandboxed desktop/mobile browser checks demonstrated preventive contact before due and a separately identified overdue follow-up. A fresh runtime-only installation and nine Windows launcher checks passed. No live AI call or real message was sent.
+**The 0.8.0 release passed 639 automated tests**, with no failures, errors or skips. Actual sandboxed desktop/mobile browser checks covered named roles, entity and document boundaries, self-approval denial and approval by someone other than the original request creator. Existing SLA, demand and preventive-reminder flows passed. A fresh runtime-only installation passed 25 checks and all 36 packaged files matched source; nine Windows launcher checks passed. No live AI call or real message was sent.
+
+The historical corrected 0.7.1 release passed 517 automated tests, with no failures, errors or skips. Real sandboxed desktop/mobile browser checks demonstrated preventive contact before due and a separately identified overdue follow-up. A fresh runtime-only installation and nine Windows launcher checks passed. No live AI call or real message was sent.
 
 The historical 0.7.0 release passed **448 automated tests**, with zero failures, errors or skips. Sandboxed desktop/mobile browser checks exercised both existing workflows and the new schedule controls, including early-dispatch rejection and duplicate prevention. A fresh runtime-only installation and nine Windows launcher checks also passed. Those 0.7.0 checks used disposable synthetic state and made no live AI calls; they are historical and do not verify this correction.
 
