@@ -2,6 +2,30 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
+## Chunk 04 - Are these quotations really comparable?
+
+A low headline price is useful only when the scope and costs are clear. Version 0.9.0 turns a currently approved request into a versioned RFQ and compares manually recorded fictional quotations against its saved requirements.
+
+| Fictional offer | What the comparison shows |
+| --- | --- |
+| AED 1,000 | Both requested lots, shipping and tax are recorded; the declared total matches the calculation. |
+| AED 600 in recorded line prices | Installation is missing and shipping is unknown. A complete total remains unknown. |
+| AED 900 declared | The recorded components add up to AED 1,000. The difference needs clarification. |
+
+![Actual quotation comparison showing a complete AED 1,000 offer, a partial offer with missing installation and unknown shipping, and an AED 900 declared total against AED 1,000 of recorded components.](assets/chunk-04-quotation-comparison.png)
+
+*Actual screenshot of local build 0.9.0, captured 17 October 2026 in Asia/Dubai using disposable fictional identities and quotations. No supplier invitation, award or purchase order is sent.*
+
+The comparison keeps unknown amounts separate from explicit zero. Missing lots, quoted currency or unit differences, and arithmetic discrepancies are visible. It does not rank suppliers or choose a winner.
+
+Each quotation belongs to an RFQ version. Changes to the request, route or approval authority make the old comparison require fresh review. A new RFQ version preserves earlier quotations as history; their prices are not carried into the new comparison.
+
+Buyers can record and revise offers in their authorized entity. Approvers and viewers can review them; requester-only accounts cannot access sourcing records. The entity pause control blocks sourcing changes while keeping existing comparisons readable.
+
+This increment uses one whole lot per requested line and records shipping and tax as explicit additions. It does not infer quantities, convert currencies, calculate tax rates, score technical quality or automate an award. The comparison is deterministic; quotation AI analysis is a future candidate.
+
+Less manual checking and fewer incomplete comparisons are value hypotheses to measure, not demonstrated customer savings.
+
 ## Chunk 03 - Who is allowed to approve this request?
 
 An approval needs an identifiable person, the right entity and current permission for the exact request. Version 0.8.0 adds named local accounts with requester, buyer, approver and viewer roles.
@@ -82,7 +106,9 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-**The 0.8.0 release passed 639 automated tests**, with no failures, errors or skips. Actual sandboxed desktop/mobile browser checks covered named roles, entity and document boundaries, self-approval denial and approval by someone other than the original request creator. Existing SLA, demand and preventive-reminder flows passed. A fresh runtime-only installation passed 25 checks and all 36 packaged files matched source; nine Windows launcher checks passed. No live AI call or real message was sent.
+**The 0.9.0 release passed 707 automated tests**, with no failures, errors or skips. Four sandboxed browser flows checked the new sourcing comparison and the existing demand, approval, document-access and preventive-reminder workflows at desktop and mobile widths. The sourcing exercise recorded three fictional offers through the actual forms and verified role boundaries and source-change invalidation. A fresh runtime-only installation passed 28 checks and all 42 packaged product files matched source; nine Windows launcher checks passed. No live AI call, supplier invitation or real procurement message was sent.
+
+**The historical 0.8.0 release passed 639 automated tests**, with no failures, errors or skips. Actual sandboxed desktop/mobile browser checks covered named roles, entity and document boundaries, self-approval denial and approval by someone other than the original request creator. Existing SLA, demand and preventive-reminder flows passed. A fresh runtime-only installation passed 25 checks and all 36 packaged files matched source; nine Windows launcher checks passed. No live AI call or real message was sent.
 
 The historical corrected 0.7.1 release passed 517 automated tests, with no failures, errors or skips. Real sandboxed desktop/mobile browser checks demonstrated preventive contact before due and a separately identified overdue follow-up. A fresh runtime-only installation and nine Windows launcher checks passed. No live AI call or real message was sent.
 

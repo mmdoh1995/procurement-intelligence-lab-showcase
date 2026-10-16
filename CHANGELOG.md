@@ -1,5 +1,15 @@
 # Showcase changes
 
+## Chunk 04 - 2026-10-17
+
+- Added RFQs bound to a currently approved request and versioned manual quotations in build 0.9.0.
+- Demonstrated complete, incomplete and arithmetically inconsistent offers in an actual synthetic screenshot.
+- Preserved unknown costs, explicit zero, source-change invalidation and earlier quotation history.
+- Enforced scoped buyer changes, reviewer access, requester privacy and the entity pause control.
+- Kept supplier ranking, award, orders, currency conversion and quotation AI analysis outside this increment.
+- Verified 707 automated tests, four sandboxed browser flows, 28 fresh runtime installation checks with 42 matching product files, and nine Windows launcher checks.
+- Retained the private-source and separate-publication boundaries.
+
 ## Chunk 03 - 2026-10-14
 
 - Added named local accounts, entity-scoped roles and current approval-authority checks in build 0.8.0.
