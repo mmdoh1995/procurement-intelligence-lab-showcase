@@ -1,3 +1,7 @@
+## 0.10.0 - 18 October 2026
+
+Added an actual synthetic administration screenshot and documented feature modes, scoped administration, retained enhancement/release history and separate AI readiness evidence. No implementation source or private research is distributed here. The separate post draft remains unpublished.
+
 # Showcase changes
 
 ## Chunk 04 - 2026-10-17

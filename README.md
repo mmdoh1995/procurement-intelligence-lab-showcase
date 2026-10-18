@@ -2,6 +2,30 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
+## Chunk 05 - What happens when a feature is paused?
+
+Version 0.10.0 adds feature controls, an enhancement roadmap, release records and separate AI readiness evidence to the local synthetic workspace.
+
+| Choice | Effect on authorized work |
+| --- | --- |
+| Enabled | Work can proceed under the current business rules. |
+| Read only | Existing records remain readable; optional feature changes and reminder dispatch stop. |
+| Disabled for new activity | New feature work stops; permitted existing work may continue. Already reserved reminders may dispatch unless a dependency is read only. |
+
+![Actual feature administration page showing a fictional entity's sourcing module set to read only, impact preview controls and retained configuration history.](assets/chunk-05-feature-controls.png)
+
+*Actual screenshot of local build 0.10.0, captured 18 October 2026 in Asia/Dubai using disposable fictional records. The saved setting and history were created through the real forms. No message or procurement transaction was sent.*
+
+The owner can set global defaults. A separately authorized feature administrator can manage settings for their own entity; this role grants no access to procurement records or documents. Changes require an impact preview, a current revision and a reason. Access checks, audit history, intake and mandatory approval controls cannot be disabled. Planned modules cannot be activated before implementation.
+
+Putting reminders or their scheduling dependency into read-only mode holds reserved reminders. Turning the feature back on does not replay those held attempts. Existing deadlines and history remain intact; further contact needs an explicit new schedule action.
+
+The roadmap records each enhancement's problem, scope, dependencies, acceptance criteria and evidence. Material scope changes invalidate earlier verification and value claims without deleting history. Release records require a version, exact commit and verification evidence. These are maintained local records; they are not automatically certified by the interface.
+
+AI readiness keeps five claims separate: implementation, offline tests, live-provider tests, model quality and measured business value. Missing credits can block live checks while development and offline testing continue. This increment adds governance and feature enforcement; quotation extraction remains planned, and no successful live AI generation is claimed.
+
+Fewer disruptive configuration changes and clearer delivery decisions are value hypotheses to measure, not demonstrated customer outcomes.
+
 ## Chunk 04 - Are these quotations really comparable?
 
 A low headline price is useful only when the scope and costs are clear. Version 0.9.0 turns a currently approved request into a versioned RFQ and compares manually recorded fictional quotations against its saved requirements.
@@ -106,7 +130,9 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-**The 0.9.0 release passed 707 automated tests**, with no failures, errors or skips. Four sandboxed browser flows checked the new sourcing comparison and the existing demand, approval, document-access and preventive-reminder workflows at desktop and mobile widths. The sourcing exercise recorded three fictional offers through the actual forms and verified role boundaries and source-change invalidation. A fresh runtime-only installation passed 28 checks and all 42 packaged product files matched source; nine Windows launcher checks passed. No live AI call, supplier invitation or real procurement message was sent.
+**The 0.10.0 release passed 844 automated tests**, with no failures, errors or skips. Five sandboxed browser flows cover administration and existing procurement workflows at desktop/mobile widths. A fresh runtime-only installation passed 34 checks and all 54 packaged product files matched source; nine Windows launcher checks passed. These checks include feature boundaries, preserved history, scope-change invalidation and independent AI readiness records. No live AI request or real procurement message was sent.
+
+**The historical 0.9.0 release passed 707 automated tests**, with no failures, errors or skips. Four sandboxed browser flows checked the new sourcing comparison and the existing demand, approval, document-access and preventive-reminder workflows at desktop and mobile widths. The sourcing exercise recorded three fictional offers through the actual forms and verified role boundaries and source-change invalidation. A fresh runtime-only installation passed 28 checks and all 42 packaged product files matched source; nine Windows launcher checks passed. No live AI call, supplier invitation or real procurement message was sent.
 
 **The historical 0.8.0 release passed 639 automated tests**, with no failures, errors or skips. Actual sandboxed desktop/mobile browser checks covered named roles, entity and document boundaries, self-approval denial and approval by someone other than the original request creator. Existing SLA, demand and preventive-reminder flows passed. A fresh runtime-only installation passed 25 checks and all 36 packaged files matched source; nine Windows launcher checks passed. No live AI call or real message was sent.
 
