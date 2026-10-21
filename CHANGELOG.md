@@ -1,3 +1,7 @@
+## 0.11.0 - 21 October 2026
+
+Added an actual synthetic Document Observer screenshot and explained local clarification, approved criteria, human evaluation and bounded AI assistance. Documented text-only scope and pending live model quality/value. Only reviewed documentation and screenshots are public; the separate post draft remains unpublished.
+
 ## 0.10.0 - 18 October 2026
 
 Added an actual synthetic administration screenshot and documented feature modes, scoped administration, retained enhancement/release history and separate AI readiness evidence. No implementation source or private research is distributed here. The separate post draft remains unpublished.

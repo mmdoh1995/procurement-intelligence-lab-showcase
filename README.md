@@ -2,6 +2,24 @@
 
 Public progress showcase for a procurement product being built from practical procurement questions, with AI-assisted engineering.
 
+## Chunk 06 - Is the document ready for evaluation?
+
+A submitted quotation may still omit a delivery commitment, contain vague terms or refer to an expired offer. Version 0.11.0 adds a Document Observer and controlled evaluation to the local synthetic workspace.
+
+![Actual Document Observer showing a missing delivery commitment, its cited requirement and a retained human review.](assets/chunk-06-document-observer.png)
+
+*Actual screenshot of local build 0.11.0, captured 21 October 2026 using disposable fictional records. The findings shown come from deterministic text checks, not generated AI output.*
+
+The buyer declares a text-document package and checklist. Another approver approves that exact version. The review highlights missing required text, selected inconsistencies, vague placeholders, explicit ISO expiry dates and duplicate documents. Each finding retains its source, severity, explanation, suggested correction and human disposition. Unknown and unassessed checks remain visible; a finding does not automatically reject a supplier.
+
+A reviewed current finding can become a local clarification with a question, deadline, intended information audience and recorded response. Nothing is sent externally. Changed documents or authority make affected reviews stale; source access restrictions continue to protect findings, history and reports.
+
+Evaluation criteria and weights require independent approval before use. Human reviewers record evidence, rationale and conflicts; corrections and independent moderation retain the earlier assessment. A missing score keeps the overall result unknown. There is no automatic supplier ranking, award or purchase order.
+
+Optional AI extraction, findings and draft questions are implemented with a real provider adapter and offline contract tests. AI starts disabled, and a live request requires an authorized user to review the exact synthetic packet and accept data and cost disclosures. Outputs remain unconfirmed suggestions. No live-provider test was run for this release; actual model quality, resistance to prompt injection and business value remain unverified.
+
+This first slice uses bounded synthetic text. PDF/Word parsing, scans/OCR, signature/authenticity checks and later supplier/contract/invoice workflows remain staged. Completeness is relative to the declared package and checklist, not proof that every relevant document exists. Reduced review time and rework are hypotheses to measure against the same manual checklist.
+
 ## Chunk 05 - What happens when a feature is paused?
 
 Version 0.10.0 adds feature controls, an enhancement roadmap, release records and separate AI readiness evidence to the local synthetic workspace.
@@ -130,7 +148,9 @@ This first capability accepts only the unchanged bundled synthetic SLA facts. It
 
 ## What has been checked
 
-**The 0.10.0 release passed 844 automated tests**, with no failures, errors or skips. Five sandboxed browser flows cover administration and existing procurement workflows at desktop/mobile widths. A fresh runtime-only installation passed 34 checks and all 54 packaged product files matched source; nine Windows launcher checks passed. These checks include feature boundaries, preserved history, scope-change invalidation and independent AI readiness records. No live AI request or real procurement message was sent.
+**The 0.11.0 release passed 1030 automated tests**, with no failures, errors or skips. The actual sandboxed browser workflow passed 7 checks covering desktop/mobile review flows and source permissions. A fresh runtime-only installation passed 38 checks with 67 matching product files; nine launcher checks and 15/15 simulated AI contract cases passed. Source, tests and synthetic fixtures remained unchanged throughout the full suite. No live AI generation or real procurement effect occurred. These checks establish bounded application behavior, not enterprise readiness or measured customer value.
+
+**The historical 0.10.0 release passed 844 automated tests**, with no failures, errors or skips. Five sandboxed browser flows cover administration and existing procurement workflows at desktop/mobile widths. A fresh runtime-only installation passed 34 checks and all 54 packaged product files matched source; nine Windows launcher checks passed. These checks include feature boundaries, preserved history, scope-change invalidation and independent AI readiness records. No live AI request or real procurement message was sent.
 
 **The historical 0.9.0 release passed 707 automated tests**, with no failures, errors or skips. Four sandboxed browser flows checked the new sourcing comparison and the existing demand, approval, document-access and preventive-reminder workflows at desktop and mobile widths. The sourcing exercise recorded three fictional offers through the actual forms and verified role boundaries and source-change invalidation. A fresh runtime-only installation passed 28 checks and all 42 packaged product files matched source; nine Windows launcher checks passed. No live AI call, supplier invitation or real procurement message was sent.
 
