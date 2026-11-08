@@ -4,11 +4,11 @@ Public progress showcase for a procurement product being built from practical pr
 
 ## Chunk 06 - Is the document ready for evaluation?
 
-A submitted quotation may still omit a delivery commitment, contain vague terms or refer to an expired offer. Version 0.11.0 adds a Document Observer and controlled evaluation to the local synthetic workspace.
+A submitted quotation may still omit a delivery commitment, contain vague terms or refer to an expired offer. Version 0.11.0 added a Document Observer and controlled evaluation. The 0.11.1 screen refresh makes requirements, findings, evidence and human review easier to inspect in the local synthetic workspace.
 
 ![Actual Document Observer showing a missing delivery commitment, its cited requirement and a retained human review.](assets/chunk-06-document-observer.png)
 
-*Actual screenshot of local build 0.11.0, captured 21 October 2026 using disposable fictional records. The findings shown come from deterministic text checks, not generated AI output.*
+*Actual screenshot of the redesigned local build 0.11.1, captured 8 November 2026 using disposable fictional records. The findings shown come from deterministic text checks, not generated AI output.*
 
 The buyer declares a text-document package and checklist. Another approver approves that exact version. The review highlights missing required text, selected inconsistencies, vague placeholders, explicit ISO expiry dates and duplicate documents. Each finding retains its source, severity, explanation, suggested correction and human disposition. Unknown and unassessed checks remain visible; a finding does not automatically reject a supplier.
 
@@ -22,7 +22,7 @@ This first slice uses bounded synthetic text. PDF/Word parsing, scans/OCR, signa
 
 ## Chunk 05 - What happens when a feature is paused?
 
-Version 0.10.0 adds feature controls, an enhancement roadmap, release records and separate AI readiness evidence to the local synthetic workspace.
+Version 0.10.0 introduced feature controls, an enhancement roadmap, release records and separate AI readiness evidence. The 0.11.1 screen refresh brings the configuration scope, affected work and required reason into one review flow.
 
 | Choice | Effect on authorized work |
 | --- | --- |
@@ -30,9 +30,9 @@ Version 0.10.0 adds feature controls, an enhancement roadmap, release records an
 | Read only | Existing records remain readable; optional feature changes and reminder dispatch stop. |
 | Disabled for new activity | New feature work stops; permitted existing work may continue. Already reserved reminders may dispatch unless a dependency is read only. |
 
-![Actual feature administration page showing a fictional entity's sourcing module set to read only, impact preview controls and retained configuration history.](assets/chunk-05-feature-controls.png)
+![Actual feature impact preview for a fictional entity, showing a proposed change from enabled to read only, affected work and required reason before applying.](assets/chunk-05-feature-controls.png)
 
-*Actual screenshot of local build 0.10.0, captured 18 October 2026 in Asia/Dubai using disposable fictional records. The saved setting and history were created through the real forms. No message or procurement transaction was sent.*
+*Actual screenshot of local build 0.11.1, captured 8 November 2026 using disposable fictional records. This is an unapplied impact preview from the real form. The same browser check also applied the change and verified retained history. No message or procurement transaction was sent.*
 
 The owner can set global defaults. A separately authorized feature administrator can manage settings for their own entity; this role grants no access to procurement records or documents. Changes require an impact preview, a current revision and a reason. Access checks, audit history, intake and mandatory approval controls cannot be disabled. Planned modules cannot be activated before implementation.
 
@@ -40,7 +40,7 @@ Putting reminders or their scheduling dependency into read-only mode holds reser
 
 The roadmap records each enhancement's problem, scope, dependencies, acceptance criteria and evidence. Material scope changes invalidate earlier verification and value claims without deleting history. Release records require a version, exact commit and verification evidence. These are maintained local records; they are not automatically certified by the interface.
 
-AI readiness keeps five claims separate: implementation, offline tests, live-provider tests, model quality and measured business value. Missing credits can block live checks while development and offline testing continue. This increment adds governance and feature enforcement; quotation extraction remains planned, and no successful live AI generation is claimed.
+AI readiness keeps five claims separate: implementation, offline tests, live-provider tests, model quality and measured business value. Missing credits can block live checks while development and offline testing continue. The original increment added governance and feature enforcement. Bounded quotation assistance was added in 0.11.0, as described above; successful live generation, model quality and measured value remain unverified.
 
 Fewer disruptive configuration changes and clearer delivery decisions are value hypotheses to measure, not demonstrated customer outcomes.
 

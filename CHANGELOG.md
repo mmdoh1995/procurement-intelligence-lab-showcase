@@ -1,3 +1,7 @@
+## 0.11.1 — 8 November 2026
+
+Refreshed the actual administration and document-review screens and replaced their screenshots with new fictional examples from the running application. The underlying business controls and bounded text/AI scope are unchanged. Product source remains private; this repository contains only documentation and synthetic screenshots.
+
 ## 0.11.0 - 21 October 2026
 
 Added an actual synthetic Document Observer screenshot and explained local clarification, approved criteria, human evaluation and bounded AI assistance. Documented text-only scope and pending live model quality/value. Only reviewed documentation and screenshots are public; the separate post draft remains unpublished.
